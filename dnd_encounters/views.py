@@ -3,6 +3,11 @@ from .models import Post
 from .forms import NPCTraits
 
 
+def npc_list(request):
+    npcs = Post.objects.all()
+    return render(request, "index.html", {"npcs": npcs})
+
+
 def npc_traits(request):
     html = "genericForm.html"
     if request.method == "POST":
@@ -21,8 +26,3 @@ def npc_traits(request):
 
     form = NPCTraits()
     return render(request, html, {'form': form})
-
-
-def npc_list(request, id):
-    npcs = NPCTraits.objects.get(id=id)
-    return render(request, "index.html", {"npcs": npcs})
