@@ -9,22 +9,30 @@
     {% for npc in npcs %}
     <ul>
         <li>
-            <strong>{{npc.name}}</strong>
+            <strong>Name: </strong>{{npc.name}}
             <br></br>
-            {{npc.hit_points}}
+            <strong>HP: </strong>{{npc.hit_points}}
+            <br></br>
             <button>
-                <a href="/hpup1/{{post.id}}">hp</a>
+                <a href="/hp_up_1/{{npc.id}}">hp</a>
             </button>
             <button>
-                <a href="/hpup10/{{post.id}}">hp up 10</a>
+                <a href="/hp_up_10/{{npc.id}}">hp up 10</a>
             </button>
             <button>
-                <a href="/hp_down_1/{{post.id}}">hp down 1</a>
+                <a href="/hp_down_1/{{npc.id}}">hp down 1</a>
             </button>
             <button>
-                <a href="/hp_down_10/{{post.id}}">hp down 10</a>
+                <a href="/hp_down_10/{{npc.id}}">hp down 10</a>
             </button>
-
+            <br></br>
+            <strong>AC: </strong>{{npc.armor_class}}
+            <br></br>
+            <strong>Resistances: </strong>{{npc.resistances}}
+            <br></br>
+            <strong>Immunities: </strong>{{npc.immunities}}
+            <br></br>
+            <strong>Speed: </strong>{{npc.speed}}
         </li>
     </ul>
     {% endfor %}
