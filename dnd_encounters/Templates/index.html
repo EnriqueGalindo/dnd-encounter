@@ -9,7 +9,22 @@
     {% for npc in npcs %}
     <ul>
         <li>
-            {{npc.name}}
+            <strong>{{npc.name}}</strong>
+            <br></br>
+            {{npc.hit_points}}
+            <button>
+                <a href="/hpup1/{{post.id}}">hp</a>
+            </button>
+            <button>
+                <a href="/hpup10/{{post.id}}">hp up 10</a>
+            </button>
+            <button>
+                <a href="/hp_down_1/{{post.id}}">hp down 1</a>
+            </button>
+            <button>
+                <a href="/hp_down_10/{{post.id}}">hp down 10</a>
+            </button>
+
         </li>
     </ul>
     {% endfor %}

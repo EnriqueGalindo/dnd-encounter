@@ -17,11 +17,19 @@ from django.contrib import admin
 from django.urls import path
 from .views import (
     npc_traits,
-    npc_list
+    npc_list,
+    hp_up_1,
+    hp_up_10,
+    hp_down_1,
+    hp_down_10
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', npc_list, name="home"),
-    path('npc/', npc_traits)
+    path('npc/', npc_traits),
+    path('hp_up_1/<int:id>', hp_up_1),
+    path('hp_up_10/<int:id>', hp_up_10),
+    path('hp_down_1/<int:id>', hp_down_1),
+    path('hp_down_10/<int:id>', hp_down_10),
 ]

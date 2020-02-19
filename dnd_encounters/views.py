@@ -26,3 +26,31 @@ def npc_traits(request):
 
     form = NPCTraits()
     return render(request, html, {'form': form})
+
+
+def hp_up_1(request, id):
+    post = Post.objects.get(id=id)
+    post.hit_points += 1
+    post.save()
+    return redirect(reverse("home"))
+
+
+def hp_up_10(request, id):
+    post = Post.objects.get(id=id)
+    post.hit_points += 10
+    post.save()
+    return redirect(reverse("home"))
+
+
+def hp_down_1(request, id):
+    post = Post.objects.get(id=id)
+    post.hit_points -= 1
+    post.save()
+    return redirect(reverse("home"))
+
+
+def hp_down_10(request, id):
+    post = Post.objects.get(id=id)
+    post.hit_points -= 10
+    post.save()
+    return redirect(reverse("home"))
